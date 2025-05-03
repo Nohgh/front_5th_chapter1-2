@@ -10,9 +10,9 @@ export function renderElement(vNode, container) {
 
   const _oldNode = oldNodeMap.get(container);
   const _newNode = normalizeVNode(vNode);
-  const _dom = createElement(_newNode);
 
   if (!_oldNode && !container.innerHTML) {
+    const _dom = createElement(_newNode);
     container.appendChild(_dom);
   } else {
     updateElement(container, _newNode, _oldNode);
